@@ -1,64 +1,76 @@
-'use client'
-import React, { useState } from "react";
-import Image from "next/image";
-import { IoIosRemoveCircle } from "react-icons/io";
-import { IoIosAddCircle } from "react-icons/io";
-import { FaCartShopping } from "react-icons/fa6";
-import products from "./db";
+"use client";
+import { FaCartPlus } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 
-const ProductCard = () => {
-  // Estado para mantener los productos seleccionados en el carrito
-  const [cartItems, setCartItems] = useState([]);
+function ProductCard({
+  allProducts,
+  setAllProducts,
+  countProducts,
+  setCountProducts,
+  total,
+  setTotal,
+}) {
+  // Variable donde se guardan los productos
+  const [products, setProducts] = useState([]);
+  //  Trae los productos desde la base de datos al FRONT
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch("http://localhost:3000/api/products");
+        const productsData = await res.json();
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+    fetchData();
+  }, []);
 
-  // Función para agregar un producto al carrito
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-    console.log("Producto Agregado")
+  const onAddProduct = (product) => {
+    if (allProducts.find((item) => item.id === product.id)) {
+      const products = allProducts.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setTotal(total + product.price * product.quantity);
+      setCountProducts(countProducts + product.quantity);
+      return setAllProducts([...products]);
+    }
+
+    setTotal(total + product.price * product.quantity);
+    setCountProducts(countProducts + product.quantity);
+    setAllProducts([...allProducts, product]);
   };
 
   return (
-    <div className="py-10 w-[80%] mx-auto">
-      <ul className="flex justify-around w-full flex-wrap gap-5 bg-BG-1">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-BG-2 rounded-md p-5 flex flex-col space-x-3 justify-center items-center min-w-[300px]"
-          >
-            <div>
-              <Image
-                className="rounded-md"
-                src={product.img}
-                width={200}
-                height={200}
-                alt="product image"
-              />
-            </div>
-            <div className="pt-5">
-              <p className="text-white p-2 font-bold text-xl">{product.name}</p>{" "}
-              <p className="text-amarillo p-2">{product.price}</p>
-            </div>
-            <div className="flex space-x-2">
-              <div className="flex space-x-3 p-2 items-center justify-center bg-BG-1 rounded-md">
-                <div>
-                  <IoIosRemoveCircle className="text-amarillo text-[30px]" />
-                </div>
-                <div className="text-white text-xl">1</div>
-                <div>
-                  <IoIosAddCircle className="text-amarillo text-[30px]" />
-                </div>
-              </div>
-              <button
-                className="flex justify-center items-center px-8 py-1 bg-amarillo rounded-3xl"
-                onClick={() => addToCart(product)} // Llamada a la función addToCart al hacer clic en el botón del carrito
+    <div className=" text-white min-h-screen justify-center items-center flex flex-wrap">
+      {products.map((product) => (
+        <div
+          key={product.id}
+          className="flex flex-col justify-between items-center gap-5 m-5 bg-BG-2 h-[500px] w-[300px] "
+        >
+          <div className="w-[300px] h-[300px] bg-gray-300 flex justify-center items-center overflow-hidden">
+            <img src={product.img} alt={product.name} />
+          </div>
+
+          <div className="px-5">
+            <h3 className="font-bold px-2">{product.name}</h3>
+            <p className="font-thin px-2 text-amarillo">
+              $ {product.price.toLocaleString("es-AR")}
+            </p>
+            <div className="w-full py-3">
+              <div
+                className="bg-amarillo hover:bg-black text-black hover:text-amarillo transition-all duration-300 space-x-3 flex justify-center items-center w-[250px] h-[50px]  cursor-pointer"
+                onClick={() => onAddProduct(product)}
               >
-                <FaCartShopping className="text-black bg-amarillo text-[40px]" />
-              </button>
+                <FaCartPlus className="text-xl" />
+                <p>Agregar al Carrito</p>
+              </div>
             </div>
           </div>
-        ))}
-      </ul>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 export default ProductCard;

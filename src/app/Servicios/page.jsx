@@ -1,3 +1,5 @@
+import SignOut from "@/components/SignOut/page";
+
 const Servicios = () => {
   return (
     <div className="min-h-screen bg-BG-1 text-white mt-16 w-[80%] mx-auto py-20 md:flex gap-5">

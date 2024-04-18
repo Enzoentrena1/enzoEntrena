@@ -11,8 +11,7 @@ const Inicio = () => {
             width={400}
             height={400}
             alt="photo 1"
-            className="rounded-full w-[400px] h-[400px] object-cover"
-          ></Image>
+          />
         </div>
         <div className="w-full md:w-1/2 ">
           <h1 className="text-center md:text-start text-amarillo font-bold text-4xl p-2">
@@ -44,8 +43,7 @@ const Inicio = () => {
               width={300}
               height={300}
               alt="photo 2"
-              className="rounded-full w-[400px] h-[400px] object-cover"
-            ></Image>
+            />
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
             <h3 className="text-amarillo text-4xl font-bold p-4">Enzo Joves</h3>
@@ -60,8 +58,7 @@ const Inicio = () => {
           </div>
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </div>
   );
 };

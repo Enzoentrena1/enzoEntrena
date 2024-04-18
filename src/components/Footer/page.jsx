@@ -6,10 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 
-
-
 const Footer = () => {
-  const activeLink = "text-rosa hover:text-text2 w-fit";
   return (
     <>
       <div className="flex flex-col sm:flex-row w-full justify-around items-start bg-amarillo py-4">
@@ -41,53 +38,25 @@ const Footer = () => {
           </h2>
           <div className="w-full">
             <nav className="flex flex-col justify-start items-start text-black">
-              <Link
-                href="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? activeLink
-                    : "text-bg1 dark:text-txt2 hover:text-rosa dark:hover:text-rosa "
-                }
-              >
+              <Link href="/">
                 <div className="p-2 font-bold text-black">
                   <p>Inicio</p>
                 </div>
               </Link>
 
-              <Link
-                href="/Tienda"
-                className={({ isActive }) =>
-                  isActive
-                    ? activeLink
-                    : "text-bg1 dark:text-txt2 hover:text-rosa dark:hover:text-rosa "
-                }
-              >
+              <Link href="/Tienda">
                 <div className="p-2 font-bold text-black">
                   <p>Tienda</p>
                 </div>
               </Link>
 
-              <Link
-                href="/Servicios"
-                className={({ isActive }) =>
-                  isActive
-                    ? activeLink
-                    : " text-bg1 dark:text-txt2 hover:text-rosa dark:hover:text-rosa "
-                }
-              >
+              <Link href="/Servicios">
                 <div className="p-2 font-bold text-black">
                   <p>Servicios</p>
                 </div>
               </Link>
 
-              <Link
-                href="/Contacto"
-                className={({ isActive }) =>
-                  isActive
-                    ? activeLink
-                    : "text-bg1 dark:text-txt2 hover:text-rosa dark:hover:text-rosa"
-                }
-              >
+              <Link href="/Contacto">
                 <div className="p-2 font-bold text-black">
                   <p>Contacto</p>
                 </div>
@@ -110,27 +79,17 @@ const Footer = () => {
           <div>
             <ul className="flex pt-6">
               <li className="nbm text-2xl p-2">
-                <a
-                  href="#"
-                  target="_blank"
-                  className="hover:theShadow-orange"
-                >
+                <a href="#" target="_blank" className="hover:theShadow-orange">
                   <FaInstagram className="text-black hover:text-yellow-400 transition-all" />
                 </a>
               </li>
               <li className="nbm text-2xl p-2">
-                <a
-                  href="#"
-                  target="_blank"
-                >
+                <a href="#" target="_blank">
                   <FaFacebookSquare className="text-black hover:text-yellow-400 transition-all" />
                 </a>
               </li>
               <li className="nbm text-2xl p-2">
-                <a
-                  href="#"
-                  target="_blank"
-                >
+                <a href="#" target="_blank">
                   <FaTiktok className="text-black hover:text-yellow-400 transition-all" />
                 </a>
               </li>

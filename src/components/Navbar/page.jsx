@@ -17,12 +17,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/">
-                <Image 
-                src="/images/Logo.png" 
-                width={50}
-                height={50}
-                alt="Logo"
-                ></Image>
+                <img src="/images/Logo.png" alt="Logo" className="w-12 h-12" />
               </Link>
             </div>
           </div>
@@ -35,19 +30,19 @@ const Navbar = () => {
                 <p>Inicio</p>
               </Link>
               <Link
-                href="/Tienda"
+                href="/tienda"
                 className="text-black hover:bg-yellow-400 font-bold p-2 h-16 items-center flex"
               >
                 Tienda
               </Link>
               <Link
-                href="/Servicios"
+                href="/servicios"
                 className="text-black hover:bg-yellow-400 font-bold p-2 h-16 items-center flex"
               >
                 Servicios
               </Link>
               <Link
-                href="/Contacto"
+                href="/contacto"
                 className="text-black hover:bg-yellow-400 font-bold p-2 h-16 items-center flex"
               >
                 Contacto
