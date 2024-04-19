@@ -20,7 +20,7 @@ export default async function HomePage() {
             href="/new"
             className="px-6 py-2 bg-amarillo text-black font-bold flex justify-center items-center w-fit m-2 rounded-md"
           >
-            <p>Crear</p>
+            <p>Nuevo</p>
           </Link>
           <SignOut />
         </div>
