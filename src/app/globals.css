@@ -3,3 +3,36 @@
 @tailwind utilities;
 
 /* Carrito Styles */
+/* Detector de errores */
+/* * {
+    @apply
+    border
+    border-red-600
+} */
+
+/* Estilos Navbar */
+.navNavbar {
+  @apply 
+    /* a */
+    relative
+    ml-10
+    text-black
+    font-mono
+    font-bold
+    tracking-[1px]
+    hover:text-VD;
+}
+.navNavbar::after {
+  @apply content-['']
+    bg-VD
+    h-[3px]
+    w-[0%]
+    left-0
+    -bottom-[5px]
+    rounded-xl
+    absolute
+    duration-300;
+}
+.navNavbar:hover::after {
+  @apply w-[100%];
+}

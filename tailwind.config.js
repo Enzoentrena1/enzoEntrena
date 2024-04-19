@@ -19,7 +19,8 @@ module.exports = {
         'IG':'#DF019D',
         'IGH':'#9B005C', 
         'WP':'#1DAA61',
-        'WPH':'#005C4B'
+        'WPH':'#005C4B',
+        'VD':'#279572',
       }
     },
   },

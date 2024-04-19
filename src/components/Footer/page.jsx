@@ -10,65 +10,81 @@ import { FaShoppingBag } from "react-icons/fa";
 import { MdOutlineSportsGymnastics } from "react-icons/md";
 import { MdContactMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  const navLink = [
+    {
+      name: "Inicio",
+      href: "/Inicio",
+      icon: FaHome,
+    },
+    {
+      name: "Tienda",
+      href: "/Tienda",
+      icon: FaShoppingBag,
+    },
+    {
+      name: "Servicios",
+      href: "/Servicios",
+      icon: MdOutlineSportsGymnastics,
+    },
+    {
+      name: "Contacto",
+      href: "/Contacto",
+      icon: MdContactMail,
+    },
+  ];
+  const Icon = navLink.icon;
   return (
     <>
       <div className="flex flex-col sm:flex-row w-full justify-around items-start bg-amarillo py-4">
         <div className="w-full md:w-auto">
+          {/* Informacion de contacto */}
           <h2 className="text-black dark:text-txt1 w-full text-center p-2">
             Informacion de Contacto
           </h2>
-          <div className="flex justify-start items-center w-full p-2">
-            <i className="bi bi-envelope-fill nbm text-xl"></i>
-            <p className="text-black ml-2 flex justify-center items-center space-x-3">
-              <MdEmail />
-              <spam>Enzojoves@gmail.com</spam>
-            </p>
+          <div className="flex justify-start items-center w-full p-2 space-x-3">
+            <MdEmail />
+            <p>Enzojoves@gmail.com</p>
           </div>
-          <div className="flex justify-start items-center w-full p-2 ml-2 space-x-3">
+          <div className="flex justify-start items-center w-full p-2 space-x-3">
             <FaPhone />
             <p className="text-black">3755-662970</p>
           </div>
-          <div className="flex justify-start items-center w-full p-2 ml-2 space-x-3">
+          <div className="flex justify-start items-center w-full p-2 space-x-3">
             <FaClock />
             <p className="text-black ">Lunes a Viernes: 9 - 20hs</p>
           </div>
         </div>
         {/* Mapa del sitio */}
-        <div className="w-full md:w-auto ml-2">
+        <div className="w-full md:w-auto">
           <h2 className="text-black dark:text-txt1 p-2 text-center">
             Mapa del sitio
           </h2>
           <div className="w-full">
             <nav className="flex flex-col justify-start items-start text-black">
-              <Link href="/">
-                <div className="p-2 text-black flex justify-center items-center space-x-3">
-                  <FaHome />
-                  <p>Inicio</p>
-                </div>
-              </Link>
+              {navLink.map((link) => {
+                const isActive = pathname.startsWith(link.href);
+                const Icon = link.icon;
 
-              <Link href="/Tienda">
-                <div className="p-2 text-black flex justify-center items-center space-x-3">
-                  <FaShoppingBag />
-                  <p>Tienda</p>
-                </div>
-              </Link>
-
-              <Link href="/Servicios">
-                <div className="p-2 text-black flex justify-center items-center space-x-3">
-                  <MdOutlineSportsGymnastics />
-                  <p>Servicios</p>
-                </div>
-              </Link>
-
-              <Link href="/Contacto">
-                <div className="p-2 text-black flex justify-center items-center space-x-3">
-                  <MdContactMail />
-                  <p>Contacto</p>
-                </div>
-              </Link>
+                return (
+                  <Link
+                    href={link.href}
+                    key={link.name}
+                    className={
+                      isActive ? "font-bold text-VD" : "hover:text-VD "
+                    }
+                  >
+                    <div className="p-2 gap-5 flex justify-center items-center">
+                      <Icon />
+                      {link.name}
+                    </div>
+                  </Link>
+                );
+              })}
             </nav>
           </div>
         </div>
@@ -118,7 +134,7 @@ const Footer = () => {
             className="flex"
           >
             Zalazar Lautaro
-          <FaInstagram className="text-xl cursor-pointer" />
+            <FaInstagram className="text-xl cursor-pointer" />
           </a>
         </div>
       </div>
@@ -127,7 +143,3 @@ const Footer = () => {
 };
 
 export { Footer };
-
-<div className="bg-blanco">
-  <IoIosArrowUp className="w-full h-full" />
-</div>;
