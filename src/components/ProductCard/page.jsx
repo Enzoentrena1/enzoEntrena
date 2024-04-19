@@ -16,7 +16,8 @@ function ProductCard({
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("http://localhost:3000/api/products");
+        const url = process.env.NODE_ENV === 'production' ? 'https://enzo-entrena.vercel.app/api/products' : 'http://localhost:3000/api/products';
+        const res = await fetch(url);
         const productsData = await res.json();
         setProducts(productsData);
       } catch (error) {
