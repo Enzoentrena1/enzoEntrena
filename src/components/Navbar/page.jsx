@@ -36,13 +36,13 @@ const Navbar = () => {
                 Tienda
               </Link>
               <Link
-                href="/servicios"
+                href="/Servicios"
                 className="text-black hover:bg-yellow-400 font-bold p-2 h-16 items-center flex"
               >
                 Servicios
               </Link>
               <Link
-                href="/contacto"
+                href="/Contacto"
                 className="text-black hover:bg-yellow-400 font-bold p-2 h-16 items-center flex"
               >
                 Contacto
