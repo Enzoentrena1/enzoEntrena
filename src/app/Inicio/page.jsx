@@ -15,7 +15,7 @@ const Inicio = () => {
         </div>
         <div className="w-full md:w-1/2 ">
           <h1 className="text-center md:text-start text-amarillo font-bold text-4xl p-2">
-            ¡Bienvenido!
+            ¡Bienvenid@!
           </h1>
           <p className="p-2 text-xl text-white">
             Estas dentro de una comunidad muy apasionada por el fitness, el
