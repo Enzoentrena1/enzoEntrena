@@ -12,7 +12,7 @@ const Inicio = () => {
           </h1>
         </div>
         {/* Separador */}
-        <div className="flex justify-start items-stretch w-full">
+        <div className="md:flex justify-start items-stretch w-full">
           <div className=" flex justify-start items-center min-w-[300px]">
             <div>
               <img
@@ -24,7 +24,7 @@ const Inicio = () => {
           </div>
           {/* Separador */}
           <div className="w-full flex flex-col justify-center items-start p-3 ">
-            <p className="p-2 text-xl text-white max-w-[500px] text-justify">
+            <p className="p-2 text-xl text-white max-w-[500px]">
               Estas dentro de una comunidad muy apasionada por el fitness, el
               entrenamiento y los buen hábitos. Esta página tiene muchas cosas y
               ¡Te invito a mirar!
@@ -49,10 +49,10 @@ const Inicio = () => {
           </h1>
         </div>
         {/* Separador */}
-        <div className="flex justify-end items-stretch w-full">
+        <div className="md:flex justify-end items-stretch w-full">
           {/* Separador */}
           <div className="w-full flex flex-col justify-center items-end p-3 ">
-            <p className="p-2 text-xl text-white max-w-[500px] text-justify">
+            <p className="p-2 text-xl text-white max-w-[500px]">
               Soy Profesor Nacional de Educación Física dedicado al
               entrenamiento personal y a sacar el máximo potencial a las
               personas, para tener una mejor calidad de vida tanto fisica como
