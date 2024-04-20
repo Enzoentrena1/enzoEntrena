@@ -47,7 +47,7 @@ export const Carrito = ({
 
     // Redirigir al enlace de WhatsApp con el contenido del carrito prellenado en el mensaje
     window.open(
-      `https://api.whatsapp.com/send?phone=3755586849&text=${encodeURIComponent(
+      `https://api.whatsapp.com/send?phone=3755662970&text=${encodeURIComponent(
         fullContent
       )}`,
       "_blank"
