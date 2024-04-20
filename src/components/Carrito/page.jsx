@@ -55,14 +55,14 @@ export const Carrito = ({
   };
 
   return (
-    <header className="flex max-w-[600px] bg-amarillo text-black p-5 fixed rounded-bl-2xl right-0">
+    <header className="flex max-w-[400px] text-white fixed right-[1%] top-[10%]">
       <div className=" w-full">
-        <div className="relative w-[40px] h-[40px] cursor-pointer">
+        <div className="relative w-full flex justify-end items-center rounded-full cursor-pointer">
           <div
-            className="container-cart-icon"
+            className=" w-[50px] h-[50px] bg-amarillo rounded-full p-2 flex justify-center items-center hover:shadow-md hover:shadow-amarillo transition-all duration-300"
             onClick={() => setActive(!active)}
           >
-            <CiShoppingCart className="text-[40px]" />
+            <CiShoppingCart className="text-[30px] text-black" />
           </div>
           <div
             className="absolute top-0 right-0 bg-black w-5 h-5 flex items-center justify-center rounded-full text-xs"
@@ -73,7 +73,7 @@ export const Carrito = ({
         </div>
 
         <div
-          className={`flex flex-col justify-around w-full ${
+          className={`flex flex-col justify-around w-full bg-BG-2 p-3 rounded-md ${
             active ? "block" : "hidden"
           }`}
         >
@@ -90,7 +90,7 @@ export const Carrito = ({
                       </div>
                       <div className="flex justify-center items-center">
                         <MdDelete
-                          className="text-[20px] cursor-pointer"
+                          className="text-[20px] cursor-pointer text-red-800"
                           onClick={() => onDeleteProduct(product)}
                         />
                       </div>
@@ -108,14 +108,14 @@ export const Carrito = ({
                 <div className="flex justify-center items-center">
                   <IoIosClose
                     onClick={onCleanCart}
-                    className="text-[30px] cursor-pointer"
+                    className="text-[40px] cursor-pointer text-red-800"
                   />
                 </div>
               </div>
               <div className="flex justify-center mt-4">
                 <button
                   onClick={redirectToWhatsApp}
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex justify-center items-center space-x-3"
+                  className="bg-green-500 hover:shadow-md hover:shadow-green-700 text-black font-bold py-2 px-4 rounded flex justify-center items-center space-x-3 transition-all duration-300"
                 >
                   <IoLogoWhatsapp />
                   <p>Realizar Pedido</p>
