@@ -62,7 +62,7 @@ const NewPage = ({ params }) => {
         <input
           id="name"
           type="text"
-          className="border border-gray-400 p-2 mb-4 w-full text-black"
+          className="border border-gray-400 p-2 mb-4 w-full text-black bg-amarillo"
           placeholder="Nombre"
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -73,7 +73,7 @@ const NewPage = ({ params }) => {
         </label>
         <input
           id="price"
-          className="border border-gray-400 p-2 mb-4 w-full text-black"
+          className="border border-gray-400 p-2 mb-4 w-full text-black bg-amarillo"
           placeholder="Precio del producto"
           type="number"
           onChange={(e) => setPrice(parseFloat(e.target.value))}
@@ -85,7 +85,7 @@ const NewPage = ({ params }) => {
         </label>
         <input
           id="quantity"
-          className="border border-gray-400 p-2 mb-4 w-full text-black"
+          className="border border-gray-400 p-2 mb-4 w-full text-black bg-amarillo"
           placeholder="quantity"
           type="number"
           onChange={(e) => setQuantity(parseInt(e.target.value))}
@@ -97,7 +97,7 @@ const NewPage = ({ params }) => {
         </label>
         <input
           id="img"
-          className="border border-gray-400 p-2 mb-4 w-full text-black"
+          className="border border-gray-400 p-2 mb-4 w-full text-black bg-amarillo"
           placeholder="URL"
           onChange={(e) => setImg(e.target.value)}
           value={img}
@@ -105,7 +105,7 @@ const NewPage = ({ params }) => {
 
         <div className=" flex justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-amarillo hover:shadow-md hover:shadow-black text-black transition-all duration-300 font-bold py-2 px-4 rounded"
             type="submit"
           >
             Crear
