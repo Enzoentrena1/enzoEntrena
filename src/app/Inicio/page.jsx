@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Inicio = () => {
   return (
-    <div className="bg-BG-1">
+    <div className="bg-BG-1 w-[90%] m-auto">
       {/* Separador */}
       <div className="my-32 flex flex-col justify-center">
         <div>

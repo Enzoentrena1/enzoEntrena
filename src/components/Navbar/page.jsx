@@ -4,10 +4,10 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [isClick, setisClick] = useState(false);
+  const [isClick, setIsClick] = useState(false);
   const pathname = usePathname();
 
-  const navLink = [
+  const navLinks = [
     {
       name: "Inicio",
       href: "/Inicio",
@@ -27,7 +27,7 @@ const Navbar = () => {
   ];
 
   const toggleNavbar = () => {
-    setisClick(!isClick);
+    setIsClick(!isClick);
   };
 
   return (
@@ -43,22 +43,17 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="flex justify-around items-center h-16 bg-amarillo">
-              <div>
-                {navLink.map((link) => {
-                  const isActive = pathname.startsWith(link.href);
-                  return (
-                    <Link
-                      href={link.href}
-                      key={link.name}
-                      className={
-                        isActive ? "navNavbar after:w-[100%]" : "navNavbar"
-                      }
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
-              </div>
+              {navLinks.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.name}
+                  className={
+                    pathname.startsWith(link.href) ? "navNavbar after:w-[100%]" : "navNavbar"
+                  }
+                >
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="md:hidden flex items-center">
@@ -104,21 +99,17 @@ const Navbar = () => {
       {isClick && (
         <div className="md:hidden">
           <div className="space-y-1">
-            {navLink.map((link) => {
-              const isActive = pathname.startsWith(link.href);
-              return (
-                <div className="text-black block text-center p-2">
-                  <Link
-                    href={link.href}
-                    key={link.name}
-                    className={isActive ? "font-bold text-VD" : "hover:text-VD"}
-                    onClick={toggleNavbar}
-                  >
-                    {link.name}
-                  </Link>
-                </div>
-              );
-            })}
+            {navLinks.map((link) => (
+              <div className="text-black block text-center p-2" key={link.name}>
+                <Link
+                  href={link.href}
+                  className={pathname.startsWith(link.href) ? "font-bold text-VD" : "hover:text-VD"}
+                  onClick={toggleNavbar}
+                >
+                  {link.name}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       )}
