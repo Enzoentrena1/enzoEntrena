@@ -4,13 +4,18 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState("/");
   const [isClick, setIsClick] = useState(false);
   const pathname = usePathname();
+
+  const handleSetActiveLink = (href) => {
+    setActiveLink(href);
+  };
 
   const navLinks = [
     {
       name: "Inicio",
-      href: "/Inicio",
+      href: "/",
     },
     {
       name: "Tienda",
@@ -48,8 +53,12 @@ const Navbar = () => {
                   href={link.href}
                   key={link.name}
                   className={
-                    pathname.startsWith(link.href) ? "navNavbar after:w-[100%]" : "navNavbar"
+                    activeLink === link.href
+                      ? "navNavbar after:w-[100%] active"
+                      : "navNavbar"
                   }
+                  onMouseOver={() => handleSetActiveLink(link.href)}
+                  onMouseOut={() => handleSetActiveLink(activeLink)}
                 >
                   {link.name}
                 </Link>
@@ -98,17 +107,20 @@ const Navbar = () => {
       </div>
       {isClick && (
         <div className="md:hidden">
-          <div className="space-y-1">
+          <div className="flex flex-col justify-center items-center bg-amarillo">
             {navLinks.map((link) => (
-              <div className="text-black block text-center p-2" key={link.name}>
-                <Link
-                  href={link.href}
-                  className={pathname.startsWith(link.href) ? "font-bold text-VD" : "hover:text-VD"}
-                  onClick={toggleNavbar}
-                >
-                  {link.name}
-                </Link>
-              </div>
+              <Link
+                href={link.href}
+                key={link.name}
+                className={
+                  pathname === link.href
+                    ? "font-bold text-VD p-2 font-mono"
+                    : "hover:text-VD p-2 font-mono"
+                }
+                onClick={toggleNavbar}
+              >
+                {link.name}
+              </Link>
             ))}
           </div>
         </div>

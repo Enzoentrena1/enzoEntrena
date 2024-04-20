@@ -11,14 +11,21 @@ import { MdOutlineSportsGymnastics } from "react-icons/md";
 import { MdContactMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const Footer = () => {
+  const [activeLink, setActiveLink] = useState("/");
+  const [isClick, setIsClick] = useState(false);
   const pathname = usePathname();
+
+  const handleSetActiveLink = (href) => {
+    setActiveLink(href);
+  };
 
   const navLink = [
     {
       name: "Inicio",
-      href: "/Inicio",
+      href: "/",
       icon: FaHome,
     },
     {
@@ -75,7 +82,9 @@ const Footer = () => {
                     href={link.href}
                     key={link.name}
                     className={
-                      isActive ? "font-bold text-VD" : "hover:text-VD "
+                      pathname === link.href
+                        ? "font-bold text-VD p-2 font-mono"
+                        : "hover:text-VD p-2 font-mono"
                     }
                   >
                     <div className="p-2 gap-5 flex justify-center items-center">
