@@ -15,7 +15,7 @@ const Servicios = () => {
             </div>
             <div className="flex space-x-2">
               <p className="text-amarillo font-bold text-2xl">AR$</p>
-              <p className="text-amarillo font-bold text-2xl">6.000</p>
+              <p className="text-amarillo font-bold text-2xl">7.000</p>
               <p className="text-amarillo font-bold text-2xl">/mes</p>
             </div>
             <p className="text-center text-xs">Servicio Estandar</p>
@@ -63,7 +63,7 @@ const Servicios = () => {
             </div>
             <div className="flex space-x-2">
               <p className="text-amarillo font-bold text-2xl">AR$</p>
-              <p className="text-amarillo font-bold text-2xl">10.000</p>
+              <p className="text-amarillo font-bold text-2xl">12.000</p>
               <p className="text-amarillo font-bold text-2xl">/mes</p>
             </div>
             <p className="text-center text-xs">Servicio Exclusivo</p>
