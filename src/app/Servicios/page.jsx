@@ -16,7 +16,7 @@ const Servicios = () => {
             <div className="flex space-x-2">
               <a
                 target="_blank"
-                href="https://wa.me/3755286624?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Básico"
+                href="https://wa.me/3755662970?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Básico"
                 className="flex justify-center items-center space-x-3 text-black font-bold bg-green-600 rounded-md p-2 my-1 hover:text-green-600 hover:bg-black transition-all duration-300"
               >
                 <p>CONSULTAR PRE$IO</p>
@@ -69,7 +69,7 @@ const Servicios = () => {
             <div className="flex space-x-2">
             <a
                 target="_blank"
-                href="https://wa.me/3755286624?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Personalizado"
+                href="https://wa.me/3755662970?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Personalizado"
                 className="flex justify-center items-center space-x-3 text-black font-bold bg-green-600 rounded-md p-2 my-1 hover:text-green-600 hover:bg-black transition-all duration-300"
               >
                 <p>CONSULTAR PRE$IO</p>
@@ -131,7 +131,7 @@ const Servicios = () => {
             <div className="flex space-x-2">
             <a
                 target="_blank"
-                href="https://wa.me/3755286624?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Online"
+                href="https://wa.me/3755662970?text=Hola%20me%20interesa%20el%20plan%20de%20entrenamiento%20Online"
                 className="flex justify-center items-center space-x-3 text-black font-bold bg-green-600 rounded-md p-2 my-1 hover:text-green-600 hover:bg-black transition-all duration-300"
               >
                 <p>CONSULTAR PRE$IO</p>
