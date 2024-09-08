@@ -32,7 +32,7 @@ export default function Home() {
             <p className="p-2 text-xl text-white max-w-[500px]">
               Estas dentro de una comunidad muy apasionada por el fitness, el
               entrenamiento y los buen hábitos. Esta página tiene muchas cosas y
-              ¡Te invito a mirar!
+              ¡Te invito a mirar! Testing push
             </p>
             <div className="flex p-2">
               <Link
